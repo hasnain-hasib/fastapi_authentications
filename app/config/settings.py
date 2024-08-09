@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     MYSQL_PORT: int = int(os.environ.get("MYSQL_PORT", 3306))
     MYSQL_DB: str = os.environ.get("MYSQL_DB", 'fastapi')
     DATABASE_URI: str = f"mysql+pymysql://{MYSQL_USER}:%s@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DB}" % quote_plus(MYSQL_PASS)
-
+    # DATABASE_URL = "mysql+mysqlconnector://hasib:2325210@localhost/testdb"
     # App Secret Key
     SECRET_KEY: str = os.environ.get("SECRET_KEY", "8deadce9449770680910741063cd0a3fe0acb62a8978661f421bbcbb66dc41f1")
 
